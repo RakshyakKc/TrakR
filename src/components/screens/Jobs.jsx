@@ -138,6 +138,7 @@ class Jobs extends React.Component {
             createData(data)
                 .then(response => response.status === 201 ? this.props.history.push('/jobs') : null)
                 .catch(() => this.setState({ errorMsg: 'there was an error' }))
+                alert('Job has been posted!')
         }
     }
     render() {
