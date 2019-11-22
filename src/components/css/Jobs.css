@@ -1,0 +1,45 @@
+
+.job-main {
+    display: flex;
+    color: white;
+}
+.job-main aside {
+    color: white;
+}
+.jobs {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 2em 3em;
+}
+.job {
+    background-color: #DFF4FF;
+    display: flex;
+    align-items: center;
+    color: #39177A;
+    flex: 1 1 300px;
+    max-width: 400px;
+    margin: 2em 3em;
+    border-radius: 3px;
+}
+.image {
+    height: auto;
+    flex: 1;
+    margin: 1em;
+    border: solid 2px grey;
+}
+.image img {
+    width: 100%;
+}
+.job-description {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+.job-description * {
+    margin: .3em;
+}
+a {
+    text-decoration: none;
+    color: #368DAD;
+}

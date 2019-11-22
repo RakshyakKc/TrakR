@@ -1,0 +1,40 @@
+.App {
+    background-color: #368DAD;
+}
+.mainBody {
+    background-color: #368DAD;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+    z-index: 1;
+    padding: 2em 0 6em 0;
+    margin: 0 auto;
+}
+.demobox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.middleImg {
+    order: 1;
+}
+.header-gif img {
+    width: 250px;
+    height: 275px;
+    border-radius: 3px;
+    border: 3px solid grey;
+    z-index: 1;
+}
+
+.demobox img {
+    width: 250px;
+    height: 275px;
+}
+.demobox .description {
+    color: white;
+    width: 300px;
+}
+#jobAuto option{
+    width: 100px;
+    height: min-content;
+    min-height: 1em;
+    padding: 0;
+}

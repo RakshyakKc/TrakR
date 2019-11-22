@@ -1,0 +1,10 @@
+.bottom {
+    display: flex;
+    background-color: #39177A;
+    color: white;
+    justify-content: space-around;
+    height: 300px;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    padding: 2em 0 3em 0;
+}

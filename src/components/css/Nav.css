@@ -1,0 +1,39 @@
+/* * {
+    border: 1px solid red;
+} */
+.nav.container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #39177A;
+    color: white;
+}
+.left {
+    display: flex;
+    align-items: center;
+}
+.right {
+    display: flex;
+}
+.left * {
+    margin:0 0 0 20px;
+    display: flex;
+}
+
+.right ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.right ul li {
+    padding: 0  20px;
+    align-self: center;
+}
+.inactive {
+    text-decoration: none;
+    color: white;
+}
+.active {
+    /* when in the page */
+    color: #368DAD;
+}

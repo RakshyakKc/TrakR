@@ -1,0 +1,10 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 3em 0 3em 0;
+    background-color: #DFF4FF;
+    clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 100%);
+}
+footer * {
+    margin: 0 1em;
+}
