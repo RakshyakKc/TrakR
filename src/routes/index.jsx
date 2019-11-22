@@ -11,7 +11,7 @@ export const Routes = (props) => {
     return (
         <Switch>
             <Route exact path='/' component={Home} props={props} />
-            <Route exact path='/Jobs' component={props => <Jobs {...props.props} props={props.props}/>}/>
+            <Route exact path='/Jobs' render={props => <Jobs {...props.props} props={props.props}/>}/>
             <Route exact path='/Jobs/create' component={CreateJobs} />
             <Route exact path='/Jobs/edit' component={EditJobs} />
             <Route exact path='/Search' component={Search} />

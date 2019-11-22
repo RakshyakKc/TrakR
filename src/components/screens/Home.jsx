@@ -15,7 +15,7 @@ function Home(props) {
                 <div className='color'>
 
                     <div className='demobox'>
-                        <img src="" onError={(e) => addSrc(e)} alt="demo 1" />
+                        <img src="https://i.imgur.com/kbtLCIE.png" onError={(e) => addSrc(e)} alt="demo 1" />
                         <div className='description'>
                             <h3>Create a list of Jobs</h3>
                             <p>Organize your job hunt in one place. A place you can update and manage the list of jobs you hve applied to.</p>
@@ -23,7 +23,7 @@ function Home(props) {
                     </div>
 
                     <div className='demobox'>
-                        <img className='middleImg' src="" onError={(e) => addSrc(e)} alt="demo 2" />
+                        <img className='middleImg' src="https://i.imgur.com/DORv8S6.png" onError={(e) => addSrc(e)} alt="demo 2" />
                         <div className='description'>
                             <h3>Organize your search</h3>
                             <p>Searh for jobs you hve added. With a detailed job description to add more notes if needed </p>
@@ -31,7 +31,7 @@ function Home(props) {
                     </div>
 
                     <div className='demobox'>
-                        <img src="" alt="demo 3" onError={(e) => addSrc(e)} />
+                        <img src="https://i.imgur.com/FuLX2eF.png" alt="demo 3" onError={(e) => addSrc(e)} />
                         <div className='description'>
                             <h3>Get similar jobs to help you search for jobs.</h3>
                             <p>Get a list of jobs related to the search to find other jobs you may be interested in</p>

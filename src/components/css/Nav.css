@@ -37,3 +37,7 @@
     /* when in the page */
     color: #368DAD;
 }
+img {
+    border: 7px solid white;
+    border-radius: 3px;
+}

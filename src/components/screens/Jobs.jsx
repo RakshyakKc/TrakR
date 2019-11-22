@@ -11,11 +11,13 @@ class Jobs extends React.Component {
             company: '',
             notes: '',
             link: '',
+            createdAt: new Date().toLocaleString(),
             errorMsg: '',
             jobSearchApi: '',
-            relatedJobs: '',
+            relatedJobs: [],
             autofillJobs: [],
-            colors: ['black', 'blue', 'dg', 'gold', 'grey', 'lg', 'orange', 'pink', 'red', 'violet']
+            colors: ['black', 'blue', 'dg', 'gold', 'grey', 'lg', 'orange', 'pink', 'red', 'violet'],
+
         }
     }
     componentDidMount() {
@@ -33,9 +35,6 @@ class Jobs extends React.Component {
     }
     displayData = () => {
         return this.state.jobs.map((job, index) => {
-            console.log(job)
-            console.log(this.state.colors)
-            console.log(`http://icons.iconarchive.com/icons/hydrattz/multipurpose-alphabet/128/Letter-${job.company[0].toUpperCase()}-${ this.state.colors[ parseInt((Math.floor(Math.random() * 9) )) ] }-icon.png`)
             return (
                 <div className='job' key={index}>
                     <div className='image'>
@@ -75,7 +74,7 @@ class Jobs extends React.Component {
                 }
                 else return false
             })
-            this.setState({ autofillJobs: filteredJobs })
+            this.setState((state) => ({ autofillJobs: [...filteredJobs, ] }))
         }
         this.showJobs()
     }
@@ -89,7 +88,7 @@ class Jobs extends React.Component {
                 <input list='company' name='company' placeholder='Company Name' autoComplete='off' value={this.state.company} onChange={(e) => this.handleChange(e)} />
                 {this.showJobs()}
                 <input name='notes' placeholder='Notes' autoComplete='off' value={this.state.notes} onChange={(e) => this.handleChange(e)} />
-                <input name='link' placeholder='Job Link' autoComplete='off' value={this.state.image} onChange={(e) => this.handleChange(e)} />
+                <input name='link' placeholder='Job Link' autoComplete='off' value={this.state.link} onChange={(e) => this.handleChange(e)} />
                 <input type="submit" value="Add Post" />
             </form>
         )
@@ -111,7 +110,14 @@ class Jobs extends React.Component {
         const relatedJobNames = related.data.related_job_titles.map((title, index) => {
             return title.title
         })
-        this.setState({ relatedJobs: relatedJobNames })
+        this.setState( (state) => ({ relatedJobs: [...relatedJobNames] }))
+        this.displaySimillarJobs()
+    }
+
+    displaySimillarJobs = () => {
+        return this.state.relatedJobs.splice(0,10).map( (job) => {
+            return <p>{job}</p>
+        })
     }
 
     handleChange = e => {
@@ -120,12 +126,13 @@ class Jobs extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        const { position, company, notes, image } = this.state
+        const { position, company, notes, link, createdAt } = this.state
         const data = {
             position,
             company,
             notes,
-            image
+            link,
+            createdAt
         }
         if (data.position && data.company) {
             createData(data)
@@ -139,9 +146,10 @@ class Jobs extends React.Component {
             <div className='job-main'>
                 <aside>
                     {this.searchJobsFromApi()}
+                    {this.displaySimillarJobs()}
                 </aside>
                 <div className='jobs-container'>
-                    <button onClick={() => this.createPost()}>Add Job Applied</button>
+                    {this.createPost()}
                     <div className='jobs'>
                         {this.displayData()}
                     </div>

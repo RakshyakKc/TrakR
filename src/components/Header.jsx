@@ -10,7 +10,7 @@ const Header = (props) => {
         <>
             <div className='bottom'>
                 <div className='header-gif'>
-                    <img src="" onError={(e) => addSrc(e)}alt="app demo" />
+                    <img src="https://i.imgur.com/k2thkMG.gif" onError={(e) => addSrc(e)}alt="app demo" />
                 </div>
                 <div className='sign-up'>
                     <h4>Your personal Job tracker</h4>

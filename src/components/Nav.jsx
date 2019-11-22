@@ -15,7 +15,7 @@ const Nav = (props) => {
                         </NavLink>
                     </h2>
                     <form onSubmit={props.handleSearch}>
-                        <input type="text" onChange={props.onChange} value={props.search} />
+                        <input type="text" onChange={props.onChange} value={props.search} onSubmit={() => {props.handleSearch()}} />
                         <input className='mobile' type="submit" value="search" />
                     </form>
                 </div>
